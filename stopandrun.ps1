@@ -1,1 +1,1 @@
-docker stop server;docker rmi server;docker build -t server .; docker run -p 80:80 -d --rm --name server server
+docker stop adamgm/urmom;docker rmi urmom;docker build -t adamgm/urmom:latest .; docker run -p 80:80 -d --rm --name urmom adamgm/urmom:latest
