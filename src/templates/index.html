@@ -13,6 +13,7 @@
     }
     div {
         color:red;
+        position: fixed;
         text-align: justify;
         font-size: 18px;
         font-family: Arial;
@@ -21,15 +22,32 @@
     .groc {
         color:yellow;
     }
+    .imagediv {
+        position: absolute;
+        text-align: center;
+    }
 </style>
+<!-- <script src="scripts/jumpscare.js" url="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg"></script> -->
+
 </head>
+
+<body>
 <script>
     
+    function jumpscare(){
+        const url = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg";
+        const img = document.getElementById("my-image"); 
+        showing.addEventListener("click", () => { 
+            img.style.display = "block"; 
+        });
+
+    }
 </script>
-<body>
-
+<button id="showing" onclick="jumpscare()">LESSGO</button>
 <h1>Manifesto of the Communist Party</h1>
-
+<div class="imagediv">
+    <img id="my-image" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg" style="display: none;" alt="lolxd">
+</div>
 <div>A spectre is haunting Europe – the spectre of communism. All the powers of old Europe have
     entered into a holy alliance to exorcise this spectre: Pope and Tsar, Metternich and Guizot,
     French Radicals and German police-spies.
