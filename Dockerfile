@@ -1,3 +1,6 @@
+# PRIMER DOCKERFILE
+
+
 # FROM debian:latest
 # RUN apt-get update #&&
 # RUN apt-get install -y apache2 #&&
@@ -33,15 +36,32 @@
 # CMD [ "nginx", "-g", "daemon off" ]
 
 
-FROM python:3.11-alpine
-LABEL author="Adam"
-LABEL version="1.0.1"
+# FROM python:3.11-alpine
+# LABEL author="Adam"
+# LABEL version="1.0.1"
+# RUN apt update
+# RUN apt install -y nginx
+# ADD file.tar .
+# COPY . /app
+# WORKDIR /app
+# RUN pip install -r requirements.txt
+# EXPOSE 8080
+# ENTRYPOINT ["python"]
+# CMD [ "nginx", "-g", "daemon off" ]
+
+# FROM python:3.9-slim
+# WORKDIR /app
+# COPY script.py .
+# COPY args.py .
+# ENTRYPOINT [ "python" ]
+# CMD [ "args.py","juan" ]
+
+FROM ubuntu
 RUN apt update
-RUN apt install -y nginx
-ADD file.tar .
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 8080
-ENTRYPOINT ["python"]
-CMD [ "nginx", "-g", "daemon off" ]
+COPY . .
+ENTRYPOINT [ "/bin/bash" ]
+
+#coses de bind mount 
+# docker build -t flask . (esta linea potser no esta be)
+# docker run -v "$(pwd)/src/:/" flask
+

@@ -1,0 +1,10 @@
+Dockerfile*
+*gger*
+*.ps1
+secret.sh
+*.tar*
+*.conf
+src/*
+#!.txt
+app/*
+scripts/*

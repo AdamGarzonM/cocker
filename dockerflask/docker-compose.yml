@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  webpage:
+    image: cursedweb
+    build:
+      context: .
+      dockerfile: ./Dockerfile.flask
+
+  registry:
+    image: registry
+    restart: always
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.reg
+    ports:
+      - 8080:8080 

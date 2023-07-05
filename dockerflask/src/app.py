@@ -11,7 +11,16 @@ def index():
         return render_template('index.html', hostname=host_name, ip=host_ip)
     except:
         return render_template('error.html')
-
+    
+@app.route("/page")
+def page():
+    try:
+        host_name=socket.gethostname()
+        host_ip = socket.gethostbyname(host_name)
+        return render_template('page.html', hostname=host_name, ip=host_ip)
+    except:
+        return render_template('error.html')    
 
 if __name__ == "__main__":
+    #app.config["TEMPLATES_AUTO_RELOAD"] = True
     app.run(host='0.0.0.0', port=8080)

@@ -1,0 +1,6 @@
+FROM registry:latest
+LABEL author="damiegm12@gmail.com"
+
+
+COPY . .
+#RUN docker image tag ubuntu localhost:5000/myfirstimage

@@ -2,52 +2,77 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>{{host_ip}} {{host_name}}</title>
 <style>
+    button{
+        background-color: red;
+        color: black;
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        position: fixed;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
     body  {
         background-image: url("https://media.tenor.com/NQeckFlOw18AAAAd/twice-twice-meme.gif");
-        background-repeat: repeat; 
-        /*background-size: 300px 300px;
-        background-size: auto;        
-        background-color: #cccccc;
-        background-size: 100% 100%;*/
+        background-repeat: repeat;
+    }
+    p {
+        position: relative;
     }
     div {
         color:red;
-        position: fixed;
         text-align: justify;
         font-size: 18px;
         font-family: Arial;
         text-justify: inter-word;
     }
     .groc {
+        
         color:yellow;
     }
     .imagediv {
-        position: absolute;
-        text-align: center;
+        position: fixed;
+        margin-left: 30%;
+        justify-content: center;
+        align-items: center;
+
     }
 </style>
-<!-- <script src="scripts/jumpscare.js" url="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg"></script> -->
 
 </head>
-
-<body>
-<script>
-    
-    function jumpscare(){
-        const url = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg";
-        const img = document.getElementById("my-image"); 
-        showing.addEventListener("click", () => { 
-            img.style.display = "block"; 
-        });
-
-    }
-</script>
-<button id="showing" onclick="jumpscare()">LESSGO</button>
-<h1>Manifesto of the Communist Party</h1>
 <div class="imagediv">
     <img id="my-image" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F002%2F579%2F135%2Fd9a.jpg" style="display: none;" alt="lolxd">
 </div>
+<body>
+<script>
+    async function download_ram(txt){
+        if (confirm(txt)) {
+            jumpscare()
+        } else {
+            download_ram("Wrong, try again!")
+        }
+    }
+
+    async function jumpscare(){
+        const img = document.getElementById("my-image")
+        const button = document.getElementById("ram")
+        console.log(button.style.display)
+        button.style.display = "none"
+        await new Promise(r => setTimeout(r, 2000))
+        img.style.display = "block"
+        await new Promise(r => setTimeout(r, 5000))
+        img.style.display = "none"
+        button.style.display = "block"
+    }
+</script>
+
+<button id="ram" onclick="download_ram('Want to download more RAM?')">DOWNLOAD RAM</button>
+
+<h1>Manifesto of the Communist Party</h1>
+
 <div>A spectre is haunting Europe – the spectre of communism. All the powers of old Europe have
     entered into a holy alliance to exorcise this spectre: Pope and Tsar, Metternich and Guizot,
     French Radicals and German police-spies.
